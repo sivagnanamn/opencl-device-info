@@ -1,19 +1,19 @@
-# opencl-device-info
+## opencl-device-info
 A simple script to check some of the basic information about the OpenCL devices available in your system.
 
-# Linux
+### Linux
 ```
 $ gcc -o deviceInfoQuery deviceInfoQuery.c -lOpenCL
 $ ./deviceInfoQuery
 ```
 
-# MAC
+### MAC
 ```
 $ clang -framework OpenCL deviceInfoQuery.c -o deviceInfoQuery
 $ ./deviceInfoQuery
 ```
 
-Sample output:
+#### Sample output:
 ```
 Starting OpenCL device query: 
 ------------------------------
