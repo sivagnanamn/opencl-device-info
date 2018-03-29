@@ -150,7 +150,7 @@ int main(void) {
       size_t max_work_group_size;
       err_num = clGetDeviceInfo(cl_devices[device_idx], CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(max_work_group_size), &max_work_group_size, NULL);
       check_cl_error(err_num, "clGetDeviceInfo: Getting device max work group size");
-      printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_MAX_WORK_GROUP_SIZE: %ld\n", platform_idx, device_idx, max_work_group_size);
+      printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_MAX_WORK_GROUP_SIZE: %ld\n", platform_idx, device_idx, (long int)max_work_group_size);
 
       // Get device max work item dim
       cl_uint max_work_item_dims;
@@ -164,7 +164,7 @@ int main(void) {
       check_cl_error(err_num, "clGetDeviceInfo: Getting device max work items dimension");
       printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_MAX_WORK_ITEM_SIZES: ", platform_idx, device_idx);
       for (size_t work_item_dim = 0; work_item_dim < max_work_item_dims; work_item_dim++) {
-                printf("%ld ", work_item_sizes[work_item_dim]);
+                printf("%ld ", (long int)work_item_sizes[work_item_dim]);
       }
       printf("\n");
 
@@ -181,27 +181,27 @@ int main(void) {
         // Get device image 2d max width
         err_num = clGetDeviceInfo(cl_devices[device_idx], CL_DEVICE_IMAGE2D_MAX_WIDTH, sizeof(image_size), &image_size, NULL);
         check_cl_error(err_num, "clGetDeviceInfo: Getting device image max 2d width");
-        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE2D_MAX_WIDTH: %ld\n", platform_idx, device_idx, image_size);
+        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE2D_MAX_WIDTH: %ld\n", platform_idx, device_idx, (long int)image_size);
 
         // Get device image 2d max height
         err_num = clGetDeviceInfo(cl_devices[device_idx], CL_DEVICE_IMAGE2D_MAX_HEIGHT, sizeof(image_size), &image_size, NULL);
         check_cl_error(err_num, "clGetDeviceInfo: Getting device image max 2d width");
-        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE2D_MAX_HEIGHT: %ld\n", platform_idx, device_idx, image_size);
+        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE2D_MAX_HEIGHT: %ld\n", platform_idx, device_idx, (long int)image_size);
 
         // Get device image 3d max width
         err_num = clGetDeviceInfo(cl_devices[device_idx], CL_DEVICE_IMAGE3D_MAX_WIDTH, sizeof(image_size), &image_size, NULL);
         check_cl_error(err_num, "clGetDeviceInfo: Getting device image max 3d width");
-        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE3D_MAX_WIDTH: %ld\n", platform_idx, device_idx, image_size);
+        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE3D_MAX_WIDTH: %ld\n", platform_idx, device_idx, (long int)image_size);
 
         // Get device image 3d max height
         err_num = clGetDeviceInfo(cl_devices[device_idx], CL_DEVICE_IMAGE3D_MAX_HEIGHT, sizeof(image_size), &image_size, NULL);
         check_cl_error(err_num, "clGetDeviceInfo: Getting device image max 3d height");
-        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE3D_MAX_HEIGHT: %ld\n", platform_idx, device_idx, image_size);
+        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE3D_MAX_HEIGHT: %ld\n", platform_idx, device_idx, (long int)image_size);
 
         // Get device image 2d max depth
         err_num = clGetDeviceInfo(cl_devices[device_idx], CL_DEVICE_IMAGE3D_MAX_DEPTH, sizeof(image_size), &image_size, NULL);
         check_cl_error(err_num, "clGetDeviceInfo: Getting device image max 3d depth");
-        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE3D_MAX_DEPTH: %ld\n", platform_idx, device_idx, image_size);
+        printf("\t\t\t\t\t [Platform %d] [Device %d] CL_DEVICE_IMAGE3D_MAX_DEPTH: %ld\n", platform_idx, device_idx, (long int)image_size);
 
       }
       printf("\n\n");
